@@ -122,7 +122,7 @@ scene.setBackgroundImage(img`
     ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
     `)
 info.setScore(0)
-if (info.score() < 50) {
+if (!(info.score() > 50)) {
     for (let index = 0; index < 100000; index++) {
         alien = sprites.create(img`
             ........................
