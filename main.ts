@@ -35,7 +35,7 @@ let boss = ""
 let alien: Sprite = null
 let playerShip: Sprite = null
 let firstName = game.askForString("What is your first name?", 1)
-let lastName = game.askForString("What is your first name?", 1)
+let lastName = game.askForString("What is your last name?", 1)
 info.setScore(0)
 scene.setBackgroundImage(img`
     ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
