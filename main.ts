@@ -1,3 +1,6 @@
+function playerName (firstName: string, lastName: string) {
+    return "" + firstName + " " + lastName
+}
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     projectile = sprites.createProjectileFromSprite(img`
         . . . . . . . . . . . . . . . . 
@@ -28,8 +31,11 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
     info.changeLifeBy(-1)
 })
 let projectile: Sprite = null
+let boss = ""
 let alien: Sprite = null
 let playerShip: Sprite = null
+let firstName = game.askForString("What is your first name?", 1)
+let lastName = game.askForString("What is your first name?", 1)
 info.setScore(0)
 scene.setBackgroundImage(img`
     ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
@@ -172,7 +178,6 @@ playerShip = sprites.create(img`
     . . . c c c c c c c c b b . . . 
     `, SpriteKind.Player)
 playerShip.setStayInScreen(true)
-playerShip.setPosition(23, 57)
 controller.player1.moveSprite(playerShip)
 if (!(info.score() > 50)) {
     for (let index = 0; index < 100000; index++) {
@@ -207,5 +212,5 @@ if (!(info.score() > 50)) {
         pause(500)
     }
 } else {
-	
+    boss = playerName(firstName, lastName)
 }
